@@ -23,4 +23,11 @@ class TaskListViewModel : ViewModel() {
         else task.status = TaskStatus.DONE
         tasks.postValue(items)
     }
+
+    fun delete(position: Int) {
+        val items = tasks.value
+        val task = tasks.value!![position]
+        tasks.value!!.remove(task)
+        tasks.postValue(items)
+    }
 }
