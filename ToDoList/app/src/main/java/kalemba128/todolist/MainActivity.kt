@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), TaskClickListener {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, swipeDir: Int) {
-                delete(swipeDir)
+                delete(viewHolder.adapterPosition)
             }
         })
 
