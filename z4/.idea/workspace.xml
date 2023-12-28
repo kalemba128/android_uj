@@ -26,21 +26,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ad59bb3-2e07-4434-be41-f537caf6ca08" name="Changes" comment="move to z4 folder">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/App.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskDatabase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/CreateTaskSheet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/CreateTaskSheet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/Task.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskListViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskViewHolder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-    </list>
+    <list default="true" id="6ad59bb3-2e07-4434-be41-f537caf6ca08" name="Changes" comment="add database support" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +74,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "z4",
+    "git-widget-placeholder": "z5",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/kalem/StudioProjects/android_uj/z4",
     "show.migrate.to.gradle.popup": "false"
