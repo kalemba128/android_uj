@@ -1,13 +1,11 @@
 package kalemba128.todolist
 
 import android.app.DatePickerDialog
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kalemba128.todolist.databinding.FragmentNewTaskSheetBinding
@@ -20,7 +18,6 @@ class CreateTaskSheet : BottomSheetDialogFragment(), DatePickerDialog.OnDateSetL
     private lateinit var taskListViewModel: TaskListViewModel
     private var date: LocalDate? = null
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val activity = requireActivity()
@@ -42,7 +39,6 @@ class CreateTaskSheet : BottomSheetDialogFragment(), DatePickerDialog.OnDateSetL
     }
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun pickDate() {
         val calendar: Calendar = Calendar.getInstance()
         val year: Int = calendar.get(Calendar.YEAR)
@@ -64,7 +60,7 @@ class CreateTaskSheet : BottomSheetDialogFragment(), DatePickerDialog.OnDateSetL
         val task = Task(
             name = binding.name.text.toString(),
             description = binding.desc.text.toString(),
-            date = date,
+            dateString = date?.format(Task.dateFormatter),
             status = TaskStatus.ONGOING,
         )
         taskListViewModel.add(task)
@@ -73,8 +69,6 @@ class CreateTaskSheet : BottomSheetDialogFragment(), DatePickerDialog.OnDateSetL
 
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            date = LocalDate.of(year, month, dayOfMonth)
-        }
+        date = LocalDate.of(year, month, dayOfMonth)
     }
 }

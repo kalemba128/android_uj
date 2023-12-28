@@ -11,11 +11,10 @@ class TaskViewHolder(
     private val binding: TaskListItemBinding,
     private val clickListener: TaskClickListener,
 ) : RecyclerView.ViewHolder(binding.root) {
-    @RequiresApi(Build.VERSION_CODES.O)
     fun bind(task: Task) {
         binding.name.text = task.name
         binding.description.text = task.description
-        binding.date.text = task.date.toString()
+        binding.date.text = task.getDate()?.format(Task.dateFormatter)
         binding.done.setImageResource(task.getIcon())
         binding.done.setColorFilter(task.getIconColor(context))
 

@@ -1,33 +1,36 @@
 package kalemba128.todolist
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import kotlinx.coroutines.launch
+import java.time.LocalDate
 
-class TaskListViewModel : ViewModel() {
-    var tasks = MutableLiveData<MutableList<Task>>()
+class TaskListViewModel(private val repository: TaskRepository) : ViewModel() {
+    val tasks: LiveData<List<Task>> = repository.items.asLiveData()
 
-    init {
-        tasks.value = mutableListOf()
+
+    fun add(task: Task) = viewModelScope.launch {
+        repository.add(task)
     }
 
-    fun add(task: Task) {
-        val items = tasks.value
-        items!!.add(task)
-        tasks.postValue(items)
-    }
+    fun toggle(task: Task) = viewModelScope.launch {
 
-    fun toggle(task: Task) {
-        val items = tasks.value
-        val task = items!!.find { it.id == task.id }!!
         if (task.status == TaskStatus.DONE) task.status = TaskStatus.ONGOING
         else task.status = TaskStatus.DONE
-        tasks.postValue(items)
+
+        repository.update(task)
     }
 
-    fun delete(position: Int) {
-        val items = tasks.value
+    fun delete(position: Int) = viewModelScope.launch {
         val task = tasks.value!![position]
-        tasks.value!!.remove(task)
-        tasks.postValue(items)
+        repository.delete(task)
+    }
+}
+
+class TaskListViewModelFactory(private val repository: TaskRepository) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(TaskListViewModel::class.java))
+            return TaskListViewModel(repository) as T
+
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

@@ -1,8 +1,8 @@
 package kalemba128.todolist
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -11,14 +11,14 @@ import kalemba128.todolist.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), TaskClickListener {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var taskListViewModel: TaskListViewModel
+    private val taskListViewModel: TaskListViewModel by viewModels {
+        TaskListViewModelFactory((application as App).repository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        taskListViewModel = ViewModelProvider(this)[TaskListViewModel::class.java]
 
         binding.newTaskButton.setOnClickListener {
             CreateTaskSheet().show(supportFragmentManager, "newTaskTag")

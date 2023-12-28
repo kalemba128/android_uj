@@ -26,63 +26,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ad59bb3-2e07-4434-be41-f537caf6ca08" name="Changes" comment="fix swipe">
-      <change beforePath="$PROJECT_DIR$/../ToDoList/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/.idea/migrations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/androidTest/java/kalemba128/todolist/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/java/kalemba128/todolist/CreateTaskSheet.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/java/kalemba128/todolist/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/java/kalemba128/todolist/Task.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/java/kalemba128/todolist/TaskAdapter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/java/kalemba128/todolist/TaskClickListener.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/java/kalemba128/todolist/TaskListViewModel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/java/kalemba128/todolist/TaskViewHolder.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/drawable/baseline_add_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/drawable/checked_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/drawable/unchecked_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/layout/fragment_new_task_sheet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/layout/task_list_item.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/app/src/test/java/kalemba128/todolist/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoList/settings.gradle.kts" beforeDir="false" />
+    <list default="true" id="6ad59bb3-2e07-4434-be41-f537caf6ca08" name="Changes" comment="move to z4 folder">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/App.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskDatabase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/CreateTaskSheet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/CreateTaskSheet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/Task.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kalemba128/todolist/TaskViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703761135876</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="move to z4 folder">
+      <option name="closed" value="true" />
+      <created>1703761274257</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703761274257</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -286,6 +251,7 @@
     <MESSAGE value="z4 create new task" />
     <MESSAGE value="add swpie to delete" />
     <MESSAGE value="fix swipe" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix swipe" />
+    <MESSAGE value="move to z4 folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="move to z4 folder" />
   </component>
 </project>
