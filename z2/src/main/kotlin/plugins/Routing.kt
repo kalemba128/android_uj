@@ -1,7 +1,12 @@
 package plugins
 
+import com.example.models.api.SignInRequest
+import com.example.models.api.SignUpRequest
 import database.dao.category.daoCategory
 import database.dao.product.daoProduct
+import database.dao.user.daoUser
+import io.ktor.http.ContentType
+import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
@@ -35,7 +40,12 @@ fun Application.configureRouting() {
 
         put("/category") {
             val category = call.receive<Category>()
-            daoCategory.updateCategory(category.id, category.name, category.description, category.imgUrl)
+            daoCategory.updateCategory(
+                category.id,
+                category.name,
+                category.description,
+                category.imgUrl
+            )
             call.respond("Category $category updated successfully")
 
         }
@@ -87,6 +97,59 @@ fun Application.configureRouting() {
             call.respond("Product $product deleted successfully")
         }
 
+        /* ----- Auth ----- */
+        get("/users") {
+            val users = daoUser.getAllUsers()
+            call.respond(mapOf("users" to users))
+        }
+
+        post("/signIn") {
+            val request = call.receive<SignInRequest>()
+            val user = daoUser.signIn(request.login, request.password)
+
+            if (user == null) {
+                call.respondText(
+                    text = "User not exists",
+                    contentType = ContentType.Application.Json,
+                    status = HttpStatusCode.Unauthorized
+                )
+                return@post
+            }
+
+            call.respond(mapOf("user" to user))
+        }
+
+        post("/signUp") {
+            val request = call.receive<SignUpRequest>()
+
+            val user = daoUser.getUserByLogin(request.login)
+            if (user != null) {
+                call.respondText(
+                    text = "User already exists",
+                    contentType = ContentType.Application.Json,
+                    status = HttpStatusCode.NotAcceptable
+                )
+                return@post
+            }
+
+            val registeredUser = daoUser.signUp(
+                request.login,
+                request.password,
+                request.token,
+                request.tokenProvider,
+            )
+
+            if (registeredUser != null) {
+                call.respond(mapOf("user" to registeredUser))
+            } else {
+                call.respondText(
+                    text = "Coś sie popsuło i nie było mnie słychać",
+                    contentType = ContentType.Application.Json,
+                    status = HttpStatusCode.BadRequest
+                )
+                return@post
+            }
+        }
     }
 }
 
