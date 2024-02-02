@@ -139,14 +139,17 @@ class SignInFragment : Fragment() {
     fun signInServer() {
         val login = loginTextField.text.toString()
         val password = passwordTextField.text.toString()
-        GlobalScope.launch(Dispatchers.IO) {
+        try {
             val user = signInViewModel.signIn(login, password, "", "SERVER")
             if (user != null) {
                 mainViewModel.user = user
             } else {
                 showToast("Error, something went wrong")
             }
+        }catch (e: Exception) {
+            showToast("Error, something went wrong")
         }
+
     }
 
     fun showToast(text: String) {
