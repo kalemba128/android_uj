@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c52e62-9d3b-4113-945f-cee4b599fa2e" name="Changes" comment="fixes">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/plugins/Routing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/plugins/Routing.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment/DAOPaymentFacade.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment/DAOPaymentFacadeImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacade.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacadeImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/Payment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/PaymentProduct.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/services/StripeService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ui/signin/SignInFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ui/signin/SignInFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,10 +67,17 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="z7" />
+        <entry key="$PROJECT_DIR$/.." value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -73,6 +89,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2XfqZ3d8urTfzWWrU4RMELyCy74" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -86,9 +105,9 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "z9",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/kalem/StudioProjects/android_uj/z2",
+    "last_opened_file_path": "C:/Users/kalem/StudioProjects/android_uj/z2/src/main/kotlin/database/dao",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -106,8 +125,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\kalem\StudioProjects\android_uj\z2\src\main\kotlin\models" />
       <recent name="C:\Users\kalem\StudioProjects\android_uj\z2\src\main\kotlin\database\dao" />
+      <recent name="C:\Users\kalem\StudioProjects\android_uj\z2\src\main\kotlin\models" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="models.api" />
@@ -150,7 +169,7 @@
       <updated>1699030534582</updated>
       <workItem from="1699030535682" duration="103000" />
       <workItem from="1699082582962" duration="1000" />
-      <workItem from="1706899984233" duration="1213000" />
+      <workItem from="1706899984233" duration="4947000" />
     </task>
     <task id="LOCAL-00001" summary="fixes">
       <option name="closed" value="true" />
@@ -160,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706901068081</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1706901571893</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706901571893</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

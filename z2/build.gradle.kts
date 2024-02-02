@@ -33,6 +33,7 @@ dependencies {
     implementation("org.slf4j:slf4j-api:2.0.9")
     implementation("org.slf4j:slf4j-log4j12:2.0.9")
     implementation("com.h2database:h2:2.2.224")
+    implementation("com.stripe:stripe-java:22.0.0")
 
 }
 

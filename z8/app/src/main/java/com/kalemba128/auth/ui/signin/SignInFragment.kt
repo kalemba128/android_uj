@@ -143,6 +143,7 @@ class SignInFragment : Fragment() {
             val user = signInViewModel.signIn(login, password, "", "SERVER")
             if (user != null) {
                 mainViewModel.user = user
+                Navigation.findNavController(_view).navigate(R.id.navigateToMainScreen)
             } else {
                 showToast("Error, something went wrong")
             }
