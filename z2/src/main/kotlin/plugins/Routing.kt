@@ -114,9 +114,11 @@ fun Application.configureRouting() {
                     status = HttpStatusCode.Unauthorized
                 )
                 return@post
+            } else {
+                call.respond(mapOf("user" to user))
             }
 
-            call.respond(mapOf("user" to user))
+
         }
 
         post("/signUp") {
