@@ -121,7 +121,7 @@ fun Application.configureRouting() {
 
         post("/signUp") {
             val request = call.receive<SignUpRequest>()
-
+            println(request)
             val user = daoUser.getUserByLogin(request.login)
             if (user != null) {
                 call.respondText(
@@ -143,7 +143,7 @@ fun Application.configureRouting() {
                 call.respond(mapOf("user" to registeredUser))
             } else {
                 call.respondText(
-                    text = "Coś sie popsuło i nie było mnie słychać",
+                    text = "User not exists",
                     contentType = ContentType.Application.Json,
                     status = HttpStatusCode.BadRequest
                 )

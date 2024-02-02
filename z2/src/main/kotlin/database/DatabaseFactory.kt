@@ -1,5 +1,6 @@
 package database
 
+import com.example.models.Users
 import models.*
 import kotlinx.coroutines.*
 import org.jetbrains.exposed.sql.*
@@ -14,6 +15,7 @@ object DatabaseFactory {
         transaction(database) {
             SchemaUtils.create(Categories)
             SchemaUtils.create(Products)
+            SchemaUtils.create(Users)
             runBlocking {}
         }
     }

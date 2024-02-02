@@ -5,44 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c52e62-9d3b-4113-945f-cee4b599fa2e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/user/DAOUserFacade.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/user/DAOUserFacadeImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/User.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/SignInRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/SignUpRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/GithubApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/GithubConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/RetrofitHelper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ServerApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/model/AccessToken.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/model/User.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/model/api/GithubUser.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/model/api/SignInRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/model/api/SignInResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/model/api/SignUpRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/model/api/SignUpResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ui/main/MainFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ui/main/MainViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ui/signin/SignInFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ui/signin/SignInViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ui/signup/SignUpFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ui/signup/SignUpViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/res/drawable/github.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/res/drawable/google.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/res/layout/fragment_main_screen.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/res/layout/fragment_register.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z8/app/src/main/res/navigation/my_nav.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/plugins/Routing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/plugins/Routing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z8/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../z8/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z8/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../z8/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z8/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../z8/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z8/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../z8/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z8/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../z8/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/database/DatabaseFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/database/DatabaseFactory.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,11 +85,20 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "z7",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/kalem/StudioProjects/android_uj/z8",
+    "last_opened_file_path": "C:/Users/kalem/StudioProjects/android_uj/z2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "preferences.keymap",
     "show.migrate.to.gradle.popup": "false",
     "spring.configuration.checksum": "739e826134d138c0e20ec4c0595c09c6",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -173,7 +147,11 @@
       <updated>1699030534582</updated>
       <workItem from="1699030535682" duration="103000" />
       <workItem from="1699082582962" duration="1000" />
+      <workItem from="1706899984233" duration="731000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
