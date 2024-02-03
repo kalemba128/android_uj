@@ -1,0 +1,64 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="kalemba128.shop.ui.cart.CartProduct" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/cardview_shadow_start_color"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="0.7"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{product.product.name}" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{Integer.toString(product.count)}" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/addOneButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                android:text="+" />
+
+            <Button
+                android:id="@+id/removeOneButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:text="-" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

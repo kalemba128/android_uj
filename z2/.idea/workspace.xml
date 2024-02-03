@@ -4,17 +4,85 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c52e62-9d3b-4113-945f-cee4b599fa2e" name="Changes" comment="fixes">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment/DAOPaymentFacade.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment/DAOPaymentFacadeImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacade.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacadeImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/Payment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/PaymentProduct.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/services/StripeService.kt" afterDir="false" />
+    <list default="true" id="46c52e62-9d3b-4113-945f-cee4b599fa2e" name="Changes" comment="Add payments models, stripe sheet">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/CreatePaymentRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/CreatePaymentResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/androidTest/java/kalemba128/shop/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/RetrofitHelper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ServerApi.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/Payment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/PaymentProduct.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/Product.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/CreatePaymentRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/CreatePaymentResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/GetProductsResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/cart/CartAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/cart/CartFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/cart/CartProduct.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/main/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/main/TabsPagerAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/product/ProductDetailsActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/product/ProductDetailsFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/products/ProductsListAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/products/ProductsListViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/drawable/baseline_add_shopping_cart_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/layout/activity_product_details.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/layout/cart_product_list_tile.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/layout/fragment_cart.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/layout/fragment_product.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/layout/product_list_tile.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/menu/menu_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/values-land/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/values-v23/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/values-w1240dp/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/values-w600dp/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/test/java/kalemba128/shop/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ui/signin/SignInFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z8/app/src/main/java/com/kalemba128/auth/ui/signin/SignInFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/database/DatabaseFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/database/DatabaseFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/plugins/Routing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/plugins/Routing.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +145,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="z9" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -96,33 +164,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "z9",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/kalem/StudioProjects/android_uj/z2/src/main/kotlin/database/dao",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "show.migrate.to.gradle.popup": "false",
-    "spring.configuration.checksum": "739e826134d138c0e20ec4c0595c09c6",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kalem/StudioProjects/android_uj/z2/src/main/kotlin/database/dao&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;739e826134d138c0e20ec4c0595c09c6&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kalem\StudioProjects\android_uj\z2\src\main\kotlin\database\dao" />
@@ -169,7 +237,10 @@
       <updated>1699030534582</updated>
       <workItem from="1699030535682" duration="103000" />
       <workItem from="1699082582962" duration="1000" />
-      <workItem from="1706899984233" duration="4947000" />
+      <workItem from="1706899984233" duration="5539000" />
+      <workItem from="1706905545156" duration="2000" />
+      <workItem from="1706909372693" duration="484000" />
+      <workItem from="1706960944857" duration="4310000" />
     </task>
     <task id="LOCAL-00001" summary="fixes">
       <option name="closed" value="true" />
@@ -187,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706901571893</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add payments models, stripe sheet">
+      <option name="closed" value="true" />
+      <created>1706905328322</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706905328322</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +285,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="Add payments models, stripe sheet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add payments models, stripe sheet" />
   </component>
 </project>

@@ -1,7 +1,10 @@
 package plugins
 
+import com.example.models.api.CreatePaymentRequest
+import com.example.models.api.CreatePaymentResponse
 import com.example.models.api.SignInRequest
 import com.example.models.api.SignUpRequest
+import com.example.services.StripeService
 import database.dao.category.daoCategory
 import database.dao.product.daoProduct
 import database.dao.user.daoUser
@@ -152,6 +155,16 @@ fun Application.configureRouting() {
                 return@post
             }
         }
+
+        post("/payment"){
+            val request = call.receive<CreatePaymentRequest>()
+            val stripeService = StripeService()
+            stripeService.createPayment(request.products)
+            val response = CreatePaymentResponse(login = "")
+            call.respond(response)
+        }
     }
+
+
 }
 

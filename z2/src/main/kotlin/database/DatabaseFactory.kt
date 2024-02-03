@@ -1,5 +1,7 @@
 package database
 
+import com.example.models.PaymentProducts
+import com.example.models.Payments
 import com.example.models.Users
 import models.*
 import kotlinx.coroutines.*
@@ -16,6 +18,8 @@ object DatabaseFactory {
             SchemaUtils.create(Categories)
             SchemaUtils.create(Products)
             SchemaUtils.create(Users)
+            SchemaUtils.create(Payments)
+            SchemaUtils.create(PaymentProducts)
             runBlocking {}
         }
     }
