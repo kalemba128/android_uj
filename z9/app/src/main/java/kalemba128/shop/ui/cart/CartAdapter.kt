@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kalemba128.shop.ui.main.MainViewModel
 import kalemba128.shop.R
 import kalemba128.shop.databinding.CartProductListTileBinding
+import kalemba128.shop.model.CartProduct
 
 class CartAdapter(private val viewModel: MainViewModel) :
     RecyclerView.Adapter<CartAdapter.ViewHolder>() {
@@ -50,7 +51,4 @@ class CartAdapter(private val viewModel: MainViewModel) :
     }
 
     override fun getItemCount() = data.size
-
-
-
 }

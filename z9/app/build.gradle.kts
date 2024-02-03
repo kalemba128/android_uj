@@ -55,4 +55,5 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-scalars:2.5.0")
     implementation("com.squareup.retrofit2:adapter-rxjava2:2.2.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+    implementation("com.stripe:stripe-android:20.37.1")
 }

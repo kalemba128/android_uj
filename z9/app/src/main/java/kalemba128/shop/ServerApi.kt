@@ -1,6 +1,6 @@
 package kalemba128.shop
 
-import com.example.models.api.CreatePaymentRequest
+import kalemba128.shop.model.api.payment.CreatePaymentRequest
 import kalemba128.shop.model.api.payment.CreatePaymentResponse
 import kalemba128.shop.model.api.payment.GetProductsResponse
 import retrofit2.Response

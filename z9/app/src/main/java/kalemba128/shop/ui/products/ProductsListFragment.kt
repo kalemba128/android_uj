@@ -22,7 +22,7 @@ class ProductsListFragment(private val viewModel: MainViewModel) : Fragment() {
         val recycleView = rootView.findViewById(R.id.productsRV) as RecyclerView
 
         val adapter = ProductsListAdapter(viewModel)
-        viewModel.products.observe(viewLifecycleOwner) { products ->
+        viewModel.productsState.observe(viewLifecycleOwner) { products ->
             adapter.notifyDataSetChanged()
         }
 

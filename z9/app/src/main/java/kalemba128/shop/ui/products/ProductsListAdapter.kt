@@ -36,7 +36,7 @@ class ProductsListAdapter(private val viewModel: MainViewModel) :
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val product = products[position]
+        val product =  viewModel.products[position]
         viewHolder.itemView.findViewById<ImageButton>(R.id.addProduct)
             .setOnClickListener { viewModel.add(product) }
         viewHolder.itemView.findViewById<LinearLayout>(R.id.productListTile).setOnClickListener {
@@ -48,8 +48,6 @@ class ProductsListAdapter(private val viewModel: MainViewModel) :
         viewHolder.bind(product)
     }
 
-    override fun getItemCount() = products.size
-
-    val products get() = viewModel.products.value ?: listOf()
+    override fun getItemCount() = viewModel.products.size
 }
 

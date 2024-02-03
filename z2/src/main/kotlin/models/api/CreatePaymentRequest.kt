@@ -1,5 +1,5 @@
 package com.example.models.api
 
-import com.example.models.PaymentProduct
+import models.CartProduct
 
-data class CreatePaymentRequest (val products : List<PaymentProduct>)
+data class CreatePaymentRequest (val products : List<CartProduct>)
