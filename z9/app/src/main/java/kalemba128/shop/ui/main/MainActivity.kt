@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayout
 import kalemba128.shop.databinding.ActivityMainBinding
-import kalemba128.shop.ui.cart.CartFragment
-import kalemba128.shop.ui.products.ProductsListFragment
 
 class MainActivity : AppCompatActivity() {
 

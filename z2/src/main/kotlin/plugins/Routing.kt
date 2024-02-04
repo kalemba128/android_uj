@@ -175,11 +175,18 @@ fun Application.configureRouting() {
                     paymentId = request.paymentId,
                     productId = product.id,
                     quantity = cartProduct.quantity,
+                    userId = request.userId,
                     total = cartProduct.quantity * product.price,
                 )
             }
             val response = ConfirmPaymentResponse(success = true)
             call.respond(response)
+        }
+
+        post("/paymentProducts") {
+            val request = call.receive<GetPaymentProductsRequest>()
+            val products = daoPaymentProduct.getProductsByUserId(request.userId)
+            call.respond(GetPaymentProductsResponse(products=products))
         }
     }
 

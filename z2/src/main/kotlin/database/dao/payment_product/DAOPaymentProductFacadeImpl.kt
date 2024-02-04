@@ -17,14 +17,20 @@ class DAOPaymentProductFacadeImpl : DAOPaymentProductFacade {
         PaymentProducts.select { PaymentProducts.paymentId eq paymentId }.map(::toPaymentProduct)
     }
 
+    override suspend fun getProductsByUserId(userId: Int): List<PaymentProduct> = dbQuery {
+        PaymentProducts.select { PaymentProducts.userId eq userId }.map(::toPaymentProduct)
+    }
+
+
     override suspend fun getAllProducts(): List<PaymentProduct> = dbQuery {
         PaymentProducts.selectAll().map(::toPaymentProduct)
     }
 
-    override suspend fun createProduct(paymentId: Int, productId: Int, quantity: Int, total: Double): PaymentProduct =
+    override suspend fun createProduct(paymentId: Int, userId: Int, productId: Int, quantity: Int, total: Double): PaymentProduct =
         dbQuery {
             PaymentProducts.insert {
                 it[this.paymentId] = paymentId
+                it[this.userId] = userId
                 it[this.productId] = productId
                 it[this.quantity] = quantity
                 it[this.total] = total
@@ -33,6 +39,7 @@ class DAOPaymentProductFacadeImpl : DAOPaymentProductFacade {
 
     private fun toPaymentProduct(row: ResultRow) = PaymentProduct(
         id = row[PaymentProducts.id],
+        userId = row[PaymentProducts.userId],
         paymentId = row[PaymentProducts.paymentId],
         productId = row[PaymentProducts.productId],
         quantity = row[PaymentProducts.quantity],

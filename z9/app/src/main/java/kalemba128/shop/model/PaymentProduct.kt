@@ -8,4 +8,5 @@ data class PaymentProduct(
     val quantity: Int,
     val price: Double,
     val total: Double,
+    val userId: Int,
 )
