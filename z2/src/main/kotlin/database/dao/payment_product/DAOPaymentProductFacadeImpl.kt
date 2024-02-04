@@ -21,15 +21,15 @@ class DAOPaymentProductFacadeImpl : DAOPaymentProductFacade {
         PaymentProducts.selectAll().map(::toPaymentProduct)
     }
 
-    override suspend fun createProduct(product: PaymentProduct): PaymentProduct = dbQuery {
-        PaymentProducts.insert {
-            it[paymentId] = product.paymentId
-            it[productId] = product.productId
-            it[quantity] = product.quantity
-            it[total] = product.total
-            it[price] = product.price
-        }.resultedValues?.map(::toPaymentProduct)?.first()!!
-    }
+    override suspend fun createProduct(paymentId: Int, productId: Int, quantity: Int, total: Double): PaymentProduct =
+        dbQuery {
+            PaymentProducts.insert {
+                it[this.paymentId] = paymentId
+                it[this.productId] = productId
+                it[this.quantity] = quantity
+                it[this.total] = total
+            }.resultedValues?.map(::toPaymentProduct)?.first()!!
+        }
 
     private fun toPaymentProduct(row: ResultRow) = PaymentProduct(
         id = row[PaymentProducts.id],
@@ -37,7 +37,6 @@ class DAOPaymentProductFacadeImpl : DAOPaymentProductFacade {
         productId = row[PaymentProducts.productId],
         quantity = row[PaymentProducts.quantity],
         total = row[PaymentProducts.total],
-        price = row[PaymentProducts.price]
     )
 }
 

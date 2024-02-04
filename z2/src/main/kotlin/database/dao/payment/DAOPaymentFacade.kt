@@ -5,5 +5,5 @@ interface DAOPaymentFacade {
     suspend fun getPaymentById(id: Int): Payment?
     suspend fun getPaymentsByUserId(userId: Int): List<Payment>
     suspend fun getAllPayments(): List<Payment>
-    suspend fun createPayment(payment: Payment): Payment
+    suspend fun createPayment(userId: Int,amount: Double): Payment
 }

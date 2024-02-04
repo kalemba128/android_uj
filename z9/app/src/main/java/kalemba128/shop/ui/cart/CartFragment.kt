@@ -7,19 +7,23 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.models.StripePayment
 import com.stripe.android.PaymentConfiguration
 import com.stripe.android.paymentsheet.PaymentSheet
 import com.stripe.android.paymentsheet.PaymentSheetResult
 import kalemba128.shop.ui.main.MainViewModel
 import kalemba128.shop.R
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 class CartFragment(private val viewModel: MainViewModel) : Fragment() {
 
     private lateinit var buyButton: Button
     private lateinit var stripePaymentSheet: PaymentSheet
+    private var currentPayment: StripePayment? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,16 +49,17 @@ class CartFragment(private val viewModel: MainViewModel) : Fragment() {
 
     fun buyProducts() {
         runBlocking {
-            val stripe = viewModel.createStripePayment()
-            stripe?.let {
-                PaymentConfiguration.init(requireContext(), stripe.publishableKey)
+            val payment = viewModel.createPayment()
+            currentPayment = payment
+            payment?.let {
+                PaymentConfiguration.init(requireContext(), payment.publishableKey)
                 stripePaymentSheet.presentWithPaymentIntent(
                     it.clientSecret,
                     PaymentSheet.Configuration(
                         merchantDisplayName = "StripeApp",
                         customer = PaymentSheet.CustomerConfiguration(
-                            stripe.customerId,
-                            stripe.ephemeralSecret,
+                            payment.customerId,
+                            payment.ephemeralSecret,
                         )
                     )
                 )
@@ -62,11 +67,17 @@ class CartFragment(private val viewModel: MainViewModel) : Fragment() {
         }
 
     }
+
     fun onPaymentSheetResult(result: PaymentSheetResult) {
         when (result) {
 
             is PaymentSheetResult.Completed -> {
-                showToast("Payment completed")
+                lifecycleScope.launch {
+                    currentPayment?.let {
+                        viewModel.confirmPayment(it)
+                        showToast("Payment completed")
+                    }
+                }
             }
 
             is PaymentSheetResult.Canceled -> {

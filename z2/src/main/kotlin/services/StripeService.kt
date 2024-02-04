@@ -36,6 +36,7 @@ class StripeService {
         val intent = PaymentIntent.create(intentParams)
 
         return StripePayment(
+            paymentId= -1,
             clientSecret = intent.clientSecret,
             ephemeralSecret = ephemeralKey.secret,
             customerId = customer.id,

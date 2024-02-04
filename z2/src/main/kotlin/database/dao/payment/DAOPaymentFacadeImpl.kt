@@ -7,6 +7,10 @@ import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.selectAll
+import org.joda.time.DateTime
+import java.time.Instant
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 
 class DAOPaymentFacadeImpl : DAOPaymentFacade {
     override suspend fun getPaymentById(id: Int): Payment? = dbQuery {
@@ -20,11 +24,14 @@ class DAOPaymentFacadeImpl : DAOPaymentFacade {
         Payments.selectAll().map(::toPayment)
     }
 
-    override suspend fun createPayment(payment: Payment): Payment = dbQuery {
+    override suspend fun createPayment(userId: Int,amount: Double): Payment = dbQuery {
         Payments.insert {
-            it[userId] = payment.userId
-            it[amount] = payment.amount
-            it[timestamp] = payment.timestamp
+            it[this.userId] = userId
+            it[this.amount] = amount
+            it[timestamp] = DateTimeFormatter
+                .ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS")
+                .withZone(ZoneOffset.UTC)
+                .format(Instant.now())
         }.resultedValues?.map(::toPayment)?.first()!!
     }
     private fun toPayment(row: ResultRow) = Payment(

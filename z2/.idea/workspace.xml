@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c52e62-9d3b-4113-945f-cee4b599fa2e" name="Changes" comment="Add payments models, stripe sheet">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/StripePayment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/StripePayment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/ConfirmPaymentRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/ConfirmPaymentResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/ConfirmPaymentRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/ConfirmPaymentResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment/DAOPaymentFacade.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment/DAOPaymentFacade.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment/DAOPaymentFacadeImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment/DAOPaymentFacadeImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacade.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacade.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacadeImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacadeImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/PaymentProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/PaymentProduct.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/StripePayment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/StripePayment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/api/CreatePaymentRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/CreatePaymentRequest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/api/CreatePaymentResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/CreatePaymentResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/plugins/Routing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/plugins/Routing.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/services/StripeService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/services/StripeService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/StripePayment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/StripePayment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/CreatePaymentRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/CreatePaymentRequest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/CreatePaymentResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/CreatePaymentResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/cart/CartFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/cart/CartFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/main/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/main/MainViewModel.kt" afterDir="false" />
@@ -95,35 +106,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kalem/StudioProjects/android_uj/z2/src/main/kotlin/models&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;739e826134d138c0e20ec4c0595c09c6&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/kalem/StudioProjects/android_uj/z2/src/main/kotlin/models/api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "show.migrate.to.gradle.popup": "false",
+    "spring.configuration.checksum": "739e826134d138c0e20ec4c0595c09c6",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kalem\StudioProjects\android_uj\z2\src\main\kotlin\models\api" />
       <recent name="C:\Users\kalem\StudioProjects\android_uj\z2\src\main\kotlin\models" />
       <recent name="C:\Users\kalem\StudioProjects\android_uj\z2\src\main\kotlin\database\dao" />
     </key>
@@ -181,7 +193,7 @@
       <workItem from="1706905545156" duration="2000" />
       <workItem from="1706909372693" duration="484000" />
       <workItem from="1706960944857" duration="8652000" />
-      <workItem from="1707055383929" duration="1724000" />
+      <workItem from="1707055383929" duration="3872000" />
     </task>
     <task id="LOCAL-00001" summary="fixes">
       <option name="closed" value="true" />

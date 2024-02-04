@@ -8,6 +8,7 @@ import kalemba128.shop.model.Product
 import androidx.lifecycle.*
 import com.example.models.StripePayment
 import kalemba128.shop.model.CartProduct
+import kalemba128.shop.model.api.payment.ConfirmPaymentRequest
 import kalemba128.shop.model.api.payment.CreatePaymentRequest
 import kotlinx.coroutines.launch
 
@@ -32,13 +33,32 @@ class MainViewModel : ViewModel() {
     }
 
 
-    suspend fun createStripePayment(): StripePayment? {
-        val response = api.createPayment(CreatePaymentRequest(products = cartProducts))
+    suspend fun createPayment(): StripePayment? {
+        val response = api.createPayment(
+            CreatePaymentRequest(
+                userId = 1,
+                products = cartProducts
+            )
+        )
         if (response.isSuccessful) {
             val body = response.body()!!
             return body.stripePayment
         }
-        return  null
+        return null
+    }
+
+    suspend fun confirmPayment(payment: StripePayment): Boolean {
+        val response = api.confirmPayment(
+            ConfirmPaymentRequest(
+                paymentId = payment.paymentId,
+                products = cartProducts
+            )
+        )
+        if (response.isSuccessful) {
+            val body = response.body()!!
+            return body.success;
+        }
+        return false
     }
 
     fun add(product: Product) {

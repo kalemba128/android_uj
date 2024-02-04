@@ -2,7 +2,7 @@ package com.example.models.api
 
 import models.CartProduct
 
-data class CreatePaymentRequest (
-    val userId: Int,
+data class ConfirmPaymentRequest (
+    val paymentId: Int,
     val products : List<CartProduct>
 )

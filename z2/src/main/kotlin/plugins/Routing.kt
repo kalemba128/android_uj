@@ -1,11 +1,11 @@
 package plugins
 
-import com.example.models.api.CreatePaymentRequest
-import com.example.models.api.CreatePaymentResponse
-import com.example.models.api.SignInRequest
-import com.example.models.api.SignUpRequest
+import com.example.models.PaymentProduct
+import com.example.models.api.*
 import com.example.services.StripeService
 import database.dao.category.daoCategory
+import database.dao.payment.daoPayment
+import database.dao.payment_product.daoPaymentProduct
 import database.dao.product.daoProduct
 import database.dao.user.daoUser
 import io.ktor.http.ContentType
@@ -156,11 +156,29 @@ fun Application.configureRouting() {
             }
         }
 
-        post("/payment") {
+        post("/createPayment") {
             val request = call.receive<CreatePaymentRequest>()
             val stripeService = StripeService()
             val payment = stripeService.createPayment(request.products)
-            val response = CreatePaymentResponse(stripePayment = payment)
+            val amount = request.products.sumOf { it.quantity * it.product.price }
+            val dbPayment = daoPayment.createPayment(request.userId, amount)
+            val response = CreatePaymentResponse(stripePayment = payment.copy(paymentId = dbPayment.id))
+            call.respond(response)
+        }
+
+        post("/confirmPayment") {
+            val request = call.receive<ConfirmPaymentRequest>()
+            val products = request.products
+            for (cartProduct in products) {
+                val product = cartProduct.product
+                daoPaymentProduct.createProduct(
+                    paymentId = request.paymentId,
+                    productId = product.id,
+                    quantity = cartProduct.quantity,
+                    total = cartProduct.quantity * product.price,
+                )
+            }
+            val response = ConfirmPaymentResponse(success = true)
             call.respond(response)
         }
     }
