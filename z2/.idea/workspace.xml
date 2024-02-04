@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c52e62-9d3b-4113-945f-cee4b599fa2e" name="Changes" comment="Add payments models, stripe sheet">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/GetPaymentProductsRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/GetPaymentProductsResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/Order.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/GetPaymentProductsRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/GetPaymentProductsResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/orders/OrderListAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/orders/OrdersListFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/layout/fragment_orders.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../z9/app/src/main/res/layout/order_list_tile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacade.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacade.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacadeImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/database/dao/payment_product/DAOPaymentProductFacadeImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/PaymentProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/PaymentProduct.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/api/ConfirmPaymentRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/api/ConfirmPaymentRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/plugins/Routing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/plugins/Routing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ServerApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ServerApi.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/ConfirmPaymentRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/model/api/payment/ConfirmPaymentRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/main/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/main/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/main/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/main/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/main/TabsPagerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../z9/app/src/main/java/kalemba128/shop/ui/main/TabsPagerAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../z9/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +174,7 @@
       <workItem from="1706905545156" duration="2000" />
       <workItem from="1706909372693" duration="484000" />
       <workItem from="1706960944857" duration="8652000" />
-      <workItem from="1707055383929" duration="7203000" />
+      <workItem from="1707055383929" duration="7899000" />
     </task>
     <task id="LOCAL-00001" summary="fixes">
       <option name="closed" value="true" />
