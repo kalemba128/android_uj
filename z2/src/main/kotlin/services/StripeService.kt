@@ -1,5 +1,6 @@
 package com.example.services
 
+import com.example.models.StripePayment
 import com.stripe.Stripe
 import com.stripe.model.Customer
 import com.stripe.model.EphemeralKey
@@ -10,8 +11,8 @@ import com.stripe.param.PaymentIntentCreateParams
 import models.CartProduct
 
 class StripeService {
-    fun createPayment(products : List<CartProduct>) {
-        Stripe.apiKey = System.getenv("STRIPE_API_KEY")
+    fun createPayment(products: List<CartProduct>): StripePayment {
+        Stripe.apiKey = System.getenv("STRIPE_SECRET_KEY")
 
         val total = products.sumOf { it.quantity * it.product.price }.toLong()
 
@@ -33,6 +34,12 @@ class StripeService {
             .build()
 
         val intent = PaymentIntent.create(intentParams)
-        println(intent)
+
+        return StripePayment(
+            clientSecret = intent.clientSecret,
+            ephemeralSecret = ephemeralKey.secret,
+            customerId = customer.id,
+            publishableKey = System.getenv("STRIPE_PUB_KEY")
+        )
     }
 }

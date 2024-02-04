@@ -156,11 +156,11 @@ fun Application.configureRouting() {
             }
         }
 
-        post("/payment"){
+        post("/payment") {
             val request = call.receive<CreatePaymentRequest>()
             val stripeService = StripeService()
-            stripeService.createPayment(request.products)
-            val response = CreatePaymentResponse(login = "")
+            val payment = stripeService.createPayment(request.products)
+            val response = CreatePaymentResponse(stripePayment = payment)
             call.respond(response)
         }
     }
