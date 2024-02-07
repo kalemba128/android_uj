@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.kalemba128.auth.R
+import com.kalemba128.auth.services.EmailValidator
+import com.kalemba128.auth.services.PasswordValidator
 import com.kalemba128.auth.ui.main.MainViewModel
 
 
@@ -18,7 +20,7 @@ class SignUpFragment : Fragment() {
     private lateinit var _view: View
     private lateinit var signUpViewModel: SignUpViewModel
     private lateinit var mainViewModel: MainViewModel
-    private lateinit var loginTextField: EditText
+    private lateinit var emailTextField: EditText
     private lateinit var passwordTextField: EditText
     private lateinit var signInButton: Button
     private lateinit var signUpButton: Button
@@ -36,10 +38,10 @@ class SignUpFragment : Fragment() {
 
         _view = inflater.inflate(R.layout.fragment_sign_up, container, false)
 
-        signInButton = _view.findViewById(R.id.registerNavButton)
-        signUpButton = _view.findViewById(R.id.registerButton)
-        loginTextField = _view.findViewById(R.id.username)
-        passwordTextField = _view.findViewById(R.id.password)
+        signInButton = _view.findViewById(R.id.signInButton)
+        signUpButton = _view.findViewById(R.id.signUpSubmitButton)
+        emailTextField = _view.findViewById(R.id.signUpEmailTextField)
+        passwordTextField = _view.findViewById(R.id.signUpPasswordTextField)
 
         signInButton.setOnClickListener {
             Navigation.findNavController(_view).navigate(R.id.navigateToLogin)
@@ -50,10 +52,24 @@ class SignUpFragment : Fragment() {
     }
 
     fun signUp() {
-        val login = loginTextField.text.toString()
+        val email = emailTextField.text.toString()
         val password = passwordTextField.text.toString()
 
-        val response = signUpViewModel.signUp(login, password)
+        val emailError = EmailValidator().validate(email)
+
+        if (emailError != null) {
+            showToast(getString(emailError))
+            return
+        }
+
+        val passwordError = PasswordValidator().validate(password)
+
+        if (passwordError != null) {
+            showToast(getString(passwordError))
+            return
+        }
+
+        val response = signUpViewModel.signUp(email, password)
 
         if (response.isSuccessful) {
             mainViewModel.user = response.body()!!.user

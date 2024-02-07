@@ -15,6 +15,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.kalemba128.auth.GithubConfig
 import com.kalemba128.auth.R
+import com.kalemba128.auth.services.EmailValidator
+import com.kalemba128.auth.services.PasswordValidator
 import com.kalemba128.auth.ui.main.MainViewModel
 import kotlinx.coroutines.*
 import java.lang.Exception
@@ -28,7 +30,7 @@ class SignInFragment : Fragment() {
     private lateinit var signUpButton: Button
     private lateinit var signInButton: Button
 
-    private lateinit var loginTextField: EditText
+    private lateinit var emailTextField: EditText
     private lateinit var passwordTextField: EditText
 
     private lateinit var googleButton: ImageView
@@ -52,11 +54,11 @@ class SignInFragment : Fragment() {
         _view = inflater.inflate(R.layout.fragment_sign_in, container, false)
 
         signUpButton = _view.findViewById(R.id.signUpButton)
-        signInButton = _view.findViewById(R.id.signInButton)
-        loginTextField = _view.findViewById(R.id.loginTextField)
-        passwordTextField = _view.findViewById(R.id.passwordTextField)
-        googleButton = _view.findViewById(R.id.googleButton)
-        githubButton = _view.findViewById(R.id.githubButton)
+        signInButton = _view.findViewById(R.id.signInSubmitButton)
+        emailTextField = _view.findViewById(R.id.signInEmailTextField)
+        passwordTextField = _view.findViewById(R.id.signInPasswordTextField)
+        googleButton = _view.findViewById(R.id.signInGoogleButton)
+        githubButton = _view.findViewById(R.id.signInGithubButton)
 
         signUpButton.setOnClickListener {
             Navigation.findNavController(_view).navigate(R.id.navigateToRegister)
@@ -137,10 +139,26 @@ class SignInFragment : Fragment() {
 
     @OptIn(DelicateCoroutinesApi::class)
     fun signInServer() {
-        val login = loginTextField.text.toString()
+        val email = emailTextField.text.toString()
         val password = passwordTextField.text.toString()
+
+
+        val emailError = EmailValidator().validate(email)
+
+        if (emailError != null) {
+            showToast(getString(emailError))
+            return
+        }
+
+        val passwordError = PasswordValidator().validate(password)
+
+        if (passwordError != null) {
+            showToast(getString(passwordError))
+            return
+        }
+
         try {
-            val user = signInViewModel.signIn(login, password, "", "SERVER")
+            val user = signInViewModel.signIn(email, password, "", "SERVER")
             if (user != null) {
                 mainViewModel.user = user
                 Navigation.findNavController(_view).navigate(R.id.navigateToMainScreen)

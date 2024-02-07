@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/signInFragment">
 
     <fragment
-        android:id="@+id/loginFragment"
+        android:id="@+id/signInFragment"
         android:name="com.kalemba128.auth.ui.signin.SignInFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_sign_in" >
@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/navigateToLogin"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/signInFragment" />
         <action
             android:id="@+id/navigateToMainScreen"
             app:destination="@id/mainScreen" />
@@ -36,6 +36,6 @@
         tools:layout="@layout/fragment_main_screen" >
         <action
             android:id="@+id/navigateToLoginFromMain"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/signInFragment" />
     </fragment>
 </navigation>

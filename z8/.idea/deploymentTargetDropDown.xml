@@ -5,6 +5,21 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="emailIsEmpty1()">
+        <State />
+      </entry>
+      <entry key="emailIsEmpty1() (1)">
+        <State />
+      </entry>
+      <entry key="navigateToSignInFragment()">
+        <State />
+      </entry>
+      <entry key="passwordDoesNotHaveSpecialCharacter1()">
+        <State />
+      </entry>
+      <entry key="passwordDoesNotHaveSpecialCharacter2()">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

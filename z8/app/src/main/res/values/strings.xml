@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Registration</string>
+    <string name="email_empty">Your email is empty</string>
+    <string name="email_short">Your email is too short</string>
+    <string name="email_long">Your email is too long</string>
+    <string name="email_valid">Your email is not valid</string>
+
+    <string name="password_empty">Your password is empty</string>
+    <string name="password_short">Your password is too short</string>
+    <string name="password_long">Your password is too long</string>
+    <string name="password_digits">Your password has to contain minimum one digit</string>
+    <string name="password_mixed">Your password has to contain upper and lower letters</string>
+    <string name="password_special">Your password has to contain special characters</string>
 </resources>
